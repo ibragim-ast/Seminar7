@@ -1,5 +1,5 @@
 ﻿
-// Напишите программу, которая на вход принимает позиции элемента в двумерном массивеи возвращает значение
+// Напишите программу, которая на вход принимает позиции элемента в двумерном массиве и возвращает значение
 // этого элемента или же указание, что такого элемента нет.
 
 int[,] CreateMatrix(int rowCount, int columnCount, int min, int max)
@@ -9,7 +9,7 @@ int[,] CreateMatrix(int rowCount, int columnCount, int min, int max)
     {
         for (int column = 0; column < columnCount; ++column)
         {
-            array[row, column] = new Random().Next(min, max+1);
+            array[row, column] = new Random().Next(min, max + 1);
         }
     }
     return array;
@@ -21,7 +21,7 @@ void PrintMatrix(int[,] arr)
     {
         for (int column = 0; column < arr.GetLength(1); ++column)
         {
-           System.Console.Write($"{arr[row, column]}\t");
+            System.Console.Write($"{arr[row, column]}\t");
         }
         System.Console.WriteLine();
     }
@@ -30,19 +30,21 @@ void PrintMatrix(int[,] arr)
 void FindElement(int[,] array)
 {
     Console.WriteLine("Введите введите число");
-    int num = Convert.ToInt32(Console.ReadLine()); 
+    int num = Convert.ToInt32(Console.ReadLine());
     int result = 0;
     for (int i = 0; i < array.GetLength(0); i++)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            if (num == array[i,j])
-            {   result++;
-                System.Console.WriteLine($"Число {num} находится на позиции {i};{j}");}
+            if (num == array[i, j])
+            {
+                result++;
+                System.Console.WriteLine($"Число {num} находится на позиции {i};{j}");
+                return;
+            }
         }
     }
-    if (result == 0)
-        System.Console.WriteLine("Такого числа нет в массиве");
+    System.Console.WriteLine("Такого числа нет в массиве");
 }
 
 int[,] array = CreateMatrix(5, 5, 1, 10);

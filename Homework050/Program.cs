@@ -45,8 +45,7 @@ void FindElement(int[,] array)
         {
             if (i == userRow && j == userColumn)
                 System.Console.WriteLine($"Элемент со значениями {userRow};{userColumn} в массиве: {array[i,j]}");
-        }
-        
+        } 
     }
 
 }
