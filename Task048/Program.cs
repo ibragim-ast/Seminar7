@@ -1,12 +1,14 @@
-﻿// 
-int[,] CreateMeatrix(int rowCount, int columnCount)
+﻿// Задайте двумерный массив размером m на n, заполненный случайными целыми числами. Каждый элемент массива
+// находится по формуле Amn = m + n. Выведенный массив выводится на экран
+
+int[,] CreateMatrix(int rowCount, int columnCount, int min, int max)
 {
     int[,] array = new int[rowCount, columnCount];
     for (int row = 0; row < rowCount; ++row)
     {
         for (int column = 0; column < columnCount; ++column)
         {
-            array[row, column] = array[row] + array[column] ;
+            array[row, column] = row + column;
         }
     }
     return array;
@@ -20,9 +22,9 @@ void PrintMatrix(int[,] arr)
         {
            System.Console.Write($"{arr[row, column]}\t");
         }
-    System.Console.WriteLine();
+        System.Console.WriteLine();
     }
 }
 
-int[,] array = CreateMeatrix(3, 4);
+int[,] array = CreateMatrix(3, 4, 0, 10);
 PrintMatrix(array);

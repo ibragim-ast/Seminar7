@@ -23,12 +23,12 @@ void PrintMartix(double[,] array)
     {
         for (int column = 0; column < array.GetLength(1); column++)
         {
-            Console.Write($"{array[row, column]}\t");
+            Console.Write($"{Math.Round(array[row, column], 2)}\t");
         }
+        System.Console.WriteLine();
     }
-    System.Console.WriteLine();
 }
 
 
-double[,] array = CreateMatrix(4, 3);
+double[,] array = CreateMatrix(7, 9);
 PrintMartix(array);
